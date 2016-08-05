@@ -39,7 +39,7 @@ public class Rack {
 		int bestScore="";
 		try{
 			// Open the file
-			FileInputStream fstream = new FileInputStream("sowpods.txt);
+			FileInputStream fstream = new FileInputStream("sowpods.txt");
 			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 
 			String strLine="";
