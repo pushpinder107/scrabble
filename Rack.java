@@ -53,6 +53,7 @@ public class Rack {
 				Collections.copy(newTile, rack);
 				for (int j = 0; j < 26; j++) {
 					char replacement = (char) (j + 'A');
+					newTile.set(i, new Tile(replacement));
 					String currBest = new Rack(newTile).getBestMatch();
 					if(generateScore(currBest) > lastMaxScore) {
 						lastMaxScore = generateScore(currBest) - getCharacterScore(replacement);
@@ -83,7 +84,6 @@ public class Rack {
 
 			String strLine = "";
 			int score = 0;
-			ArrayList<String> wordsInALine = new ArrayList<String>();
 			// Read File Line By Line
 			while ((strLine = br.readLine()) != null) {
 				if (isPossibleAnagram(countArr, strLine.toUpperCase())) {
