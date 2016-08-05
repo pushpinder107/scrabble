@@ -13,3 +13,6 @@ The (word,Score) Pair is compared with the previous pair generated to identify t
 If score is bigger, the word is replaced. 
 
 This goes on till EOF. 
+
+Without blank runs fine.
+look into the getBestWhenBlank() for blanks.  
