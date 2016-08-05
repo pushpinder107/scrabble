@@ -74,7 +74,7 @@ public class Rack {
 		}
 		
 		for(i=0;i<26;i++){
-			if(arrCount[i]!=dictCountArr[i]){
+			if(dictCountArr[i]>arrCount[i]){
 				break;
 			}
 		}
