@@ -1,6 +1,6 @@
 # scrabble
 
-We have three classes -  Tile, Rack and MainClass.
+We have three classes -  Tile, Rack and Driver.
 
 The letter combination in the rack is converted to a count-Array. (i.e) ABCDAAA -> 411100000000000000000000000000
 
