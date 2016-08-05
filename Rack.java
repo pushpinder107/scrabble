@@ -24,5 +24,65 @@ public class Rack {
 	public void setRack(List<Tile> rack) {
 		this.rack = rack;
 	}
+	
+	public String getBestWord(){
+		String bestWord;
+		int[] countArr=new int[26]();
+		for(int i=0;i<7;i++){
+			countArr[rack.get(i).getLetter()-'A']++;
+		}
+		bestWord = searchForBestMatch(countArr);
+	}
+	
+	public string searchForBestMatch(int[] countArr){
+		String bestWord="";
+		int bestScore="";
+		try{
+			// Open the file
+			FileInputStream fstream = new FileInputStream("sowpods.txt);
+			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 
+			String strLine="";
+
+			ArrayList<String> wordsInALine=new ArrayList<String>();
+			//Read File Line By Line
+			while ((strLine = br.readLine()) != null)   {
+			  if(isPossibleAnagram(countArr,strLine){
+				score=generateScore(strLine); //implement This 
+				if(score>bestScore){
+					bestScore=score;
+					bestWord=strLine;
+				}
+			  }
+			}
+	        
+			//Close the input stream
+			br.close();
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+		return bestWord;
+	}
+	
+	public boolean isPossibleAnagram(int[] countArr, String dictWord){
+		boolean isPossible=false;
+		int[] dictCountArr= new int[26]();
+		int i=0;
+		for(i=0;i<dictWord.length();i++){
+			dictCountArr[dictWord-'A']++;
+		}
+		
+		for(i=0;i<26;i++){
+			if(arrCount[i]!=dictCountArr[i]){
+				break;
+			}
+		}
+		
+		if(i==26)
+			isPossible=true;
+		return isPossible;
+	}
 }
+
+
