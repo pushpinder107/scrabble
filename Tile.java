@@ -4,6 +4,12 @@ public class Tile {
 	Character letter;
 	Integer score;
 
+	public Tile(Character letter) {
+		this.letter = letter;
+		this.score = scrabbleScore(letter);
+	}
+	
+	
 	int scrabbleScore(Character letter) {
 		int score = 0;
 		char EnglishScoreTable[] = { 1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10 };
@@ -11,16 +17,6 @@ public class Tile {
 			score += EnglishScoreTable[letter - 'A'];
 		}
 		return score;
-	}
-
-	public Tile(Character letter) {
-		this.letter = letter;
-		this.score = scrabbleScore(letter);
-	}
-
-	@Override
-	public String toString() {
-		return "Tiles [letter=" + letter + ", score=" + score + "]";
 	}
 
 	public Character getLetter() {
@@ -37,6 +33,11 @@ public class Tile {
 
 	public void setScore(Integer score) {
 		this.score = score;
+	}
+	
+        @Override
+	public String toString() {
+		return "Tiles [letter=" + letter + ", score=" + score + "]";
 	}
 
 }
